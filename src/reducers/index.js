@@ -1,3 +1,10 @@
 import todosRed from './todosReducer.js'
+import {combineReducers} from 'redux'
+import {reducer as reduxFormReducer} from 'redux-form'
 
-export default todosRed
+const reducer = combineReducers({
+    form: reduxFormReducer,
+    app: todosRed
+})
+
+export default reducer
