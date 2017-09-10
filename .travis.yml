@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - 6
+cache:
+  directories:
+    - node_modules
+script:
+  - yarn build
+  - sleep 1; echo done;
+deploy:
+  provider: heroku
+  api_key: ZXONvZTOR3fTkepz6/bxfCFg/3tnd0/Gb2rgOs0D7JNri6RQk/1r7wSFwN6APOQ5W9LEXnEuaIWqM8uqQQDJELxksgcjPCAdhF2oZbCDqg4TVnUrxB1aknPLwU9NzlqGTLqSPc5Hg+aN0pWWFEWHAn2u1HI4e9mRkFNC6mSQ/ELbF8MbzcsMUVFaxOWAa0SMlagp1QosgNk5iqnW4/hLWYCS542wqGhxXgcNwVZOMxJYxx88xNPfSl6sO+3oz7M+XQdXlkdUIKxOBBX3/fDZ6wtbOJqQZ1thgblNczDTmsO5D60AJN73T+TA3N503spg8tT/scOZqGJC2fL+1DevbRhLe3fzfsGqJKvYCN8icRVOUZOt//Z4j5rq7pFPHPUsKU6KzaNhGuqSWoD6Sft9GEnaDvkMbR5i8meXbBtgHUIQcb4KW1OSbIebiZD5C84ZeTtMiIfddP6EpEioSZ2Z/0+VvAcpRyCOXvrdN3B/JFxGelFqVCLBf06yNlp1RSPlJD8LOE3qjwjzZNsGTbBhSUNSHiH84WSY5Ri072fKaWl0KB668wXDC89caB/3bRuykHtaA9//Ikn/JJePZq7271GcORGWQTPJOVm9yIAWEb3nEk2Jy/Sxr1Drsw5k6vra1DQrzuXkiGSuOlkO8JeivkHxUUeGZjAkdx5M47Bz/Xk=
+  app:
+    master: react-redux-training
