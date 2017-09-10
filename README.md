@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/marek2901/react-redux-training.svg?branch=master)](https://travis-ci.org/marek2901/react-redux-training)
-[![Heroku](https://heroku-badge.herokuapp.com/?app=react-redux-training)]
+[![Heroku](https://heroku-badge.herokuapp.com/?app=react-redux-training)](https://react-redux-training.herokuapp.com/)
 
 ## REACT with REDUX :tada:
 
