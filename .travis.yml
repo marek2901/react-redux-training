@@ -1,12 +1,12 @@
 language: node_js
 node_js:
-- 6
+  - 6
 cache:
   directories:
-  - node_modules
+    - node_modules
 script:
-- yarn build
-- sleep 1; echo done;
+  - yarn build
+  - sleep 1; echo done;
 deploy:
   provider: heroku
   api_key:
