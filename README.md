@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/marek2901/react-redux-training.svg?branch=master)](https://travis-ci.org/marek2901/react-redux-training)
+[![Heroku](https://heroku-badge.herokuapp.com/?app=react-redux-training)]
+
 ## REACT with REDUX :tada:
 
 This repository contains my first react/redux app.
