@@ -1,17 +1,17 @@
 import React from 'react';
-import {reduxForm, Field} from 'redux-form'
-import {addTodo} from '../actions/todoActions.js'
-import {validate} from '../validators/addTodoValidator.js'
-import {errorableField} from '../fieldsTemplates/errorableField.js'
+import {reduxForm, Field} from 'redux-form';
+import {addTodo} from '../actions/todoActions.js';
+import {validate} from '../validators/addTodoValidator.js';
+import {errorableField} from '../fieldsTemplates/errorableField.js';
 
 class AddTodoForm extends React.Component {
     handleSubmit(data) {
         this
             .props
-            .dispatch(addTodo(data.todosText))
+            .dispatch(addTodo(data.todosText));
         this
             .props
-            .reset()
+            .reset();
     }
     render() {
         const {handleSubmit} = this.props;

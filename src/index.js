@@ -5,10 +5,10 @@ import ReduxApp from './components/app.js';
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 
-import store from './store'
+import store from './store';
 
 ReactDOM.render(
     <Provider store={store}>
-    <ReduxApp/>
-</Provider>, document.getElementById('root'));
+      <ReduxApp/>
+    </Provider>, document.getElementById('root'));
 registerServiceWorker();
