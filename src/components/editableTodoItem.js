@@ -22,9 +22,9 @@ class EditableTodoItem extends React.Component {
                         name="todosText"
                         type="text"
                         component={errorableField}
-                        placeholder="What you want to do?"/>
+                        placeholder="Edit your todo :O ?"/>
                     <button>Submit</button>
-                    <a href='#' onClick={this.handleCancel.bind(this)}>Cancel</a>
+                    <button onClick={this.handleCancel.bind(this)}>Cancel</button>
                 </form>
             </li>
         );

@@ -52,8 +52,8 @@ const reducer = (state = {
             todos: editedTodos
         };
     case 'TOGGLE_DONE':
-        var todos = state.todos.slice();
-        todos = _.map(todos, (element) => {
+        var todosToggled = state.todos.slice();
+        todosToggled = _.map(todosToggled, (element) => {
             if (element.id === action.payload){
                 element.done = !element.done;
             }
@@ -61,7 +61,7 @@ const reducer = (state = {
         });
         return {
             ...state,
-            todos: todos
+            todos: todosToggled
         };
     default:
         return state;
