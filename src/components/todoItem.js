@@ -6,6 +6,11 @@ class TodoItem extends React.Component {
             .props
             .onToggle(this.props.item.id);
     }
+    toggleEdit(){
+        this
+            .props
+            .onToggleEdit(this.props.item.id)
+    }
     render() {
         return (
             <li
@@ -14,6 +19,12 @@ class TodoItem extends React.Component {
                 : 'undone-item'}
                 key={this.props.item.id}>
                 {this.props.item.id}. {this.props.item.text}
+                <button
+                    onClick={this
+                        .toggleEdit
+                        .bind(this)}>
+                    Edit
+                </button>
                 <button
                     onClick={this
                     .toggleDone

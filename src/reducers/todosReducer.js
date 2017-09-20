@@ -23,6 +23,34 @@ const reducer = (state = {
             ...state,
             todos: newTodos
         };
+    case 'TOGGLE_EDIT':
+        var todos = state.todos.slice();
+        todos = _.map(todos, (element) => {
+            if (element.id === action.payload.id){
+                element.editable = action.payload.editable;
+            } else {
+                element.editable = false;
+            }
+            return element;
+        });
+        return {
+            ...state,
+            todos: todos
+        };
+    case 'EDIT_TODO':
+        var editedTodos = _.map(
+            state.todos.slice(),
+            (element) => {
+                if(element.id === action.payload.id){
+                    element.text = action.payload.text;
+                    element.editable = false;
+                }
+                return element;
+            });
+        return {
+            ...state,
+            todos: editedTodos
+        };
     case 'TOGGLE_DONE':
         var todos = state.todos.slice();
         todos = _.map(todos, (element) => {

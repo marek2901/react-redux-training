@@ -3,15 +3,22 @@ import {connect} from 'react-redux';
 
 import _ from 'lodash';
 
-import {toggleDone} from '../actions/todoActions.js';
+import {toggleDone, toggleEdit, editTodo} from '../actions/todoActions.js';
 
 import AddTodoForm from './addTodoForm.js';
-import TodoItem from './todoItem.js';
+import TodoItemResolver from './todoItemResolver.js';
 
 class App extends React.Component {
     render() {
         var todos = _.map(this.props.todos, (element) => {
-            return <TodoItem onToggle={this.toggleItem.bind(this)} item={element}/>;
+            return(
+                <TodoItemResolver
+                  onToggle={this.toggleItem.bind(this)}
+                  onToggleEdit={this.toggleItemEdit.bind(this)}
+                  item={element}
+                  onEditCancel={this.itemEditCancel.bind(this)}
+                  onEditSubmit={this.itemEditSubmit.bind(this)}/>
+            );
         });
 
         return (<div>
@@ -24,6 +31,15 @@ class App extends React.Component {
     }
     toggleItem(itemId){
         this.props.dispatch(toggleDone(itemId));
+    }
+    toggleItemEdit(itemId){
+        this.props.dispatch(toggleEdit(itemId, true));
+    }
+    itemEditSubmit(itemId, text){
+        this.props.dispatch(editTodo(itemId, text));
+    }
+    itemEditCancel(itemId){
+        this.props.dispatch(toggleEdit(itemId, false));
     }
 }
 

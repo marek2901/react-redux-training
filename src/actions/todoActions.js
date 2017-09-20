@@ -20,9 +20,29 @@ export const addTodo = (text) => {
     };
 };
 
+export const editTodo = (id, text) => {
+    return {
+        type: 'EDIT_TODO',
+        payload: {
+            id: id,
+            text: text
+        }
+    };
+};
+
 export const toggleDone = (id) => {
     return {
         type: 'TOGGLE_DONE',
         payload: id
+    };
+};
+
+export const toggleEdit = (id, editable) => {
+    return {
+        type: 'TOGGLE_EDIT',
+        payload: {
+            id: id,
+            editable: editable
+        }
     };
 };
