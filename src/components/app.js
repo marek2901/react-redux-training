@@ -21,13 +21,17 @@ class App extends React.Component {
             );
         });
 
-        return (<div>
-                  <h1>React todo JS</h1>
-                  <ul>
-                   {todos}
-                  </ul>
-                  <AddTodoForm/>
-                </div>);
+        return (
+            <div className='umbotron d-flex align-items-center'>
+                <div className='container'>
+                    <h1 className='text-center'>React todo JS</h1>
+                    <ul className='list-group' >
+                        {todos}
+                    </ul>
+                    <AddTodoForm/>
+                </div>
+            </div>
+        );
     }
     toggleItem(itemId){
         this.props.dispatch(toggleDone(itemId));

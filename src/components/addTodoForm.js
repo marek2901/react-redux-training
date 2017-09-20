@@ -16,15 +16,20 @@ class AddTodoForm extends React.Component {
     render() {
         const {handleSubmit} = this.props;
         return (
+            <div className='form-group text-center'>
             <form onSubmit={handleSubmit(this.handleSubmit.bind(this))}>
-                <Field
-                    name="todosText"
-                    type="text"
-                    component={errorableField}
+            <Field
+            name="todosText"
+            type="text"
+            component={errorableField}
                     placeholder="What you want to do?"/>
-                <button>Submit</button>
+              <button className='btn btn-primary center-block'>
+                Submit
+              </button>
             </form>
+          </div>
         );
+
     }
 }
 

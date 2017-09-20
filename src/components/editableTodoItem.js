@@ -16,15 +16,15 @@ class EditableTodoItem extends React.Component {
     render() {
         const {handleSubmit} = this.props;
         return (
-            <li>
+            <li className='list-group-item text-center list-group-item-info'>
                 <form onSubmit={handleSubmit(this.handleSubmit.bind(this))}>
                     <Field
                         name="todosText"
                         type="text"
                         component={errorableField}
                         placeholder="Edit your todo :O ?"/>
-                    <button>Submit</button>
-                    <button onClick={this.handleCancel.bind(this)}>Cancel</button>
+                    <button className='btn btn-primary' >Submit</button>
+                    <button className='btn btn-warning' onClick={this.handleCancel.bind(this)}>Cancel</button>
                 </form>
             </li>
         );

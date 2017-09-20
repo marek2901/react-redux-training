@@ -4,6 +4,10 @@ body {
   font-family: sans-serif;
 }
 
+.todo-item {
+    display: inline-flex;
+}
+
 .done-item {
     text-decoration: line-through;
 }

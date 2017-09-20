@@ -9,28 +9,43 @@ class TodoItem extends React.Component {
     toggleEdit(){
         this
             .props
-            .onToggleEdit(this.props.item.id)
+            .onToggleEdit(this.props.item.id);
+    }
+    resolveClassNames(){
+        const doneClasses = this.props.item.done
+              ? 'done-item list-group-item-success'
+              : 'undone-item list-group-item-warning';
+        return `${doneClasses} list-group-item todo-item`;
+    }
+    resolveButtonClassNames(){
+        return this.props.item.done
+             ? 'btn-danger' :
+               'btn-success';
     }
     render() {
         return (
             <li
-                className={this.props.item.done
-                ? 'done-item'
-                : 'undone-item'}
+                className={this.resolveClassNames.call(this)}
                 key={this.props.item.id}>
-                {this.props.item.id}. {this.props.item.text}
-                <button
-                    onClick={this
-                        .toggleEdit
-                        .bind(this)}>
-                    Edit
-                </button>
-                <button
-                    onClick={this
-                    .toggleDone
-                    .bind(this)}>{this.props.item.done
-                        ? 'Undone'
-                        : 'Done'}</button>
+                <div className='col-md-9 align-middle'>
+                    {this.props.item.id}. {this.props.item.text}
+                </div>
+                <div className='col-md-3'>
+                    <button
+                        className='btn btn-link'
+                        onClick={this
+                            .toggleEdit
+                            .bind(this)}>
+                        Edit
+                    </button>
+                    <button
+                        className={`btn ${this.resolveButtonClassNames.call(this)}`}
+                        onClick={this
+                            .toggleDone
+                            .bind(this)}>{this.props.item.done
+                                        ? 'Undone'
+                                        : 'Done'}</button>
+                </div>
             </li>
         );
     }

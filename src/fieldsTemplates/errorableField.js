@@ -11,7 +11,7 @@ export const errorableField = ({
     }
 }) => <div>
     <div>
-        <input {...input} placeholder={placeholder} type={type}/> {touched && ((error && <span>
+        <input {...input} className='form-control' placeholder={placeholder} type={type}/> {touched && ((error && <span>
             {error}
         </span>) || (warning && <span>
             {warning}
