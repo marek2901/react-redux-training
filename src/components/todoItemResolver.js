@@ -18,6 +18,7 @@ class TodoItemResolver extends React.Component {
               <TodoItem
                 onToggle={this.props.onToggle}
                 onToggleEdit={this.props.onToggleEdit}
+                onDelete={this.props.onDelete}
                 item={this.props.item}/>
           );
       }

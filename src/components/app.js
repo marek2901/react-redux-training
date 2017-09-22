@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 
 import _ from 'lodash';
 
-import {toggleDone, toggleEdit, editTodo} from '../actions/todoActions.js';
+import {toggleDone, toggleEdit, editTodo, deleteTodo} from '../actions/todoActions.js';
 
 import AddTodoForm from './addTodoForm.js';
 import TodoItemResolver from './todoItemResolver.js';
@@ -17,7 +17,8 @@ class App extends React.Component {
                   onToggleEdit={this.toggleItemEdit.bind(this)}
                   item={element}
                   onEditCancel={this.itemEditCancel.bind(this)}
-                  onEditSubmit={this.itemEditSubmit.bind(this)}/>
+                  onEditSubmit={this.itemEditSubmit.bind(this)}
+                  onDelete={this.itemDelete.bind(this)}/>
             );
         });
 
@@ -44,6 +45,9 @@ class App extends React.Component {
     }
     itemEditCancel(itemId){
         this.props.dispatch(toggleEdit(itemId, false));
+    }
+    itemDelete(itemId){
+        this.props.dispatch(deleteTodo(itemId));
     }
 }
 

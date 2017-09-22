@@ -63,6 +63,15 @@ const reducer = (state = {
             ...state,
             todos: todosToggled
         };
+    case 'DELETE_TODO':
+        var filteredTodos = _.filter(
+            state.todos.slice(),
+            (item) => item.id !== action.payload
+        );
+        return {
+            ...state,
+            todos: filteredTodos
+        };
     default:
         return state;
     }

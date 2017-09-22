@@ -22,6 +22,11 @@ class TodoItem extends React.Component {
              ? 'btn-danger' :
                'btn-success';
     }
+    deleteTodo(){
+        this
+            .props
+            .onDelete(this.props.item.id);
+    }
     render() {
         return (
             <li
@@ -45,6 +50,13 @@ class TodoItem extends React.Component {
                             .bind(this)}>{this.props.item.done
                                         ? 'Undone'
                                         : 'Done'}</button>
+                    {this.props.item.done &&
+                     <button
+                         className='btn btn-success'
+                         onClick={this
+                             .deleteTodo
+                             .bind(this)}> Delete </button>
+                    }
                 </div>
             </li>
         );
