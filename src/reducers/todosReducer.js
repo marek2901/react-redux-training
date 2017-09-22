@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 const reducer = (state = {
-    todos: (JSON.parse(localStorage.getItem('app')).todos || [])
+    todos: beginningTodosState()
 }, action) => {
     switch (action.type) {
     case 'SHOW_ALL_TODOS':
@@ -74,6 +74,14 @@ const reducer = (state = {
         };
     default:
         return state;
+    }
+};
+
+const beginningTodosState = () => {
+    try{
+        return JSON.parse(localStorage.getItem('app')).todos || [];
+    }catch(_err){
+        return [];
     }
 };
 
