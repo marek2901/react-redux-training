@@ -1,5 +1,7 @@
-import {createStore} from 'redux';
+import {createStore, applyMiddleware} from 'redux';
 
 import reducer from './reducers';
 
-export default createStore(reducer);
+import storeSync from './middleware/browserStoreSync.js';
+
+export default createStore(reducer, applyMiddleware(storeSync));

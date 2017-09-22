@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 const reducer = (state = {
-    todos: []
+    todos: (JSON.parse(localStorage.getItem('app')).todos || [])
 }, action) => {
     switch (action.type) {
     case 'SHOW_ALL_TODOS':
